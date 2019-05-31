@@ -1,0 +1,65 @@
+{
+  "resourceType": "Patient",
+  "meta": {
+    "profile": [
+      "http://example.com/fhir/StructureDefinition/patient-1c-telecomslice"
+    ]
+  },
+  "text": {
+    "status": "additional",
+    "div": "<div>Patient with a couple slice matching telecoms.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.com/fhir/StructureDefinition/resource-test-expected",
+      "extension": [
+        {
+          "url": "passFlag",
+          "valueBoolean": true
+        }
+      ]
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "given": [
+        "Jane"
+      ],
+      "family": [
+        "Smith"
+      ]
+    },
+    {
+      "use": "maiden",
+      "given": [
+        "Jane"
+      ],
+      "family": [
+        "Doe"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(555) 867-5309",
+      "use": "home"
+    },
+    {
+      "system": "phone",
+      "value": "(555) 867-5310",
+      "use": "home"
+    },
+    {
+      "system": "phone",
+      "value": "(555) 555-1234",
+      "use": "mobile"
+    },
+    {
+      "system": "email",
+      "value": "jdoe@example.com",
+      "use": "work"
+    }
+  ]
+}

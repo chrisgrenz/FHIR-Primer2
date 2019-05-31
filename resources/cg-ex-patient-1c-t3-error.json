@@ -1,0 +1,54 @@
+{
+  "resourceType": "Patient",
+  "meta": {
+    "profile": [
+      "http://example.com/fhir/StructureDefinition/patient-1c-t2-telecomslice"
+    ]
+  },
+  "text": {
+    "status": "additional",
+    "div": "<div>Emails without work not enough</div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.com/fhir/StructureDefinition/resource-test-expected",
+      "extension": [
+        {
+          "url": "passFlag",
+          "valueBoolean": false
+        }
+      ]
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "given": [
+        "Jane"
+      ],
+      "family": [
+        "Smith"
+      ]
+    },
+    {
+      "use": "maiden",
+      "given": [
+        "Jane"
+      ],
+      "family": [
+        "Doe"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "jdoe@example.com",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "jsmith@example.com"
+    }
+  ]
+}

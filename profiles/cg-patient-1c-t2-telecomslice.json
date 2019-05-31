@@ -1,0 +1,49 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/patient-1c-t2-telecomslice",
+  "version": "0.1",
+  "name": "PatientWithTelecomSliceWithConstraints",
+  "title": "Patient Profile 1 - 1c-t2 with constraints",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description":"Max one home phone, require 2 work emails",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://example.com/fhir/StructureDefinition/patient-1c-telecomslice",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient"
+      },
+      {
+        "id": "Patient.telecom:homePhone",
+        "path": "Patient.telecom",
+        "sliceName":"homePhone",
+        "max":"1"
+      },
+      {
+        "id": "Patient.telecom:workEmail",
+        "path": "Patient.telecom",
+        "sliceName":"workEmail",
+        "min":"2"
+      }
+    ]
+  }
+}
