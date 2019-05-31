@@ -1,0 +1,42 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/patient-3a-t2-typeprofile",
+  "version": "0.1",
+  "name": "PatientTypeProfileConstrained",
+  "title": "Patient Profile 3 - 3a-t2 Constrained",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description": "Constrain a slice (require SNOMED for marital status) introduced in the base via a type profile.",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://example.com/fhir/StructureDefinition/patient-3a-typeprofile",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient"
+      },
+      {
+        "id": "Patient.maritalStatus.coding:SNOMED",
+        "path": "Patient.maritalStatus.coding",
+        "min":1
+      }
+    ]
+  }
+}

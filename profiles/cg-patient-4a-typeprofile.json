@@ -1,0 +1,60 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/patient-4a-typeprofile",
+  "version": "0.1",
+  "name": "PatientTypeProfile",
+  "title": "Patient Profile 4 - 4a Same as 3b all in a single profile",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description": "Patient with marital status common coding systems applied via profile",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://hl7.com/fhir/StructureDefinition/Patient",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient"
+      },
+      {
+        "id": "Patient.maritalStatus",
+        "path": "Patient.maritalStatus",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://example.com/fhir/StructureDefinition/codeableconcept-commonsystems"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.maritalStatus.coding:NCI",
+        "path": "Patient.maritalStatus.coding",
+        "sliceName": "NCI",
+        "min": 1
+      },
+      {
+        "id": "Patient.maritalStatus.coding:NCI.system",
+        "path": "Patient.maritalStatus.coding.system",
+        "fixedUri": "http://ncimeta.nci.nih.gov"
+      }
+    ]
+  }
+}

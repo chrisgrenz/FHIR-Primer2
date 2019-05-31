@@ -1,0 +1,56 @@
+{
+  "resourceType": "Patient",
+  "meta": {
+    "profile": [
+      "http://example.com/fhir/StructureDefinition/patient-4a-typeprofile"
+    ]
+  },
+  "text": {
+    "status": "additional",
+    "div": "<div>Patient with marital status missing the NCI encoding.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.com/fhir/StructureDefinition/resource-test-expected",
+      "extension": [
+        {
+          "url": "passFlag",
+          "valueBoolean": false
+        }
+      ]
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "given": [
+        "Jane"
+      ],
+      "family": [
+        "Smith"
+      ]
+    },
+    {
+      "use": "maiden",
+      "given": [
+        "Jane"
+      ],
+      "family": [
+        "Doe"
+      ]
+    }
+  ],
+  "maritalStatus": {
+    "coding": [
+      {
+        "system":"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+        "code":"M"
+      },
+      {
+        "system":"http://snomed.info/sct",
+        "code":"87915002"
+      }
+    ],
+    "text":"Married"
+  }
+}

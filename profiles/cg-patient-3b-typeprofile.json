@@ -1,0 +1,48 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/patient-3b-typeprofile",
+  "version": "0.1",
+  "name": "PatientTypeProfileAddAnother",
+  "title": "Patient Profile 3 - 3b Add NCI system",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description": "Add another slice to an existing slicing introduced in a type profile.",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://example.com/fhir/StructureDefinition/patient-3a-typeprofile",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient"
+      },
+      {
+        "id": "Patient.maritalStatus.coding:NCI",
+        "path": "Patient.maritalStatus.coding",
+        "sliceName": "NCI",
+        "min":1
+      },
+      {
+        "id": "Patient.maritalStatus.coding:NCI.system",
+        "path": "Patient.maritalStatus.coding.system",
+        "fixedUri": "http://ncimeta.nci.nih.gov"
+      }
+    ]
+  }
+}

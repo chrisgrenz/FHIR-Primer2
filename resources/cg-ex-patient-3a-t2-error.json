@@ -1,0 +1,52 @@
+{
+  "resourceType": "Patient",
+  "meta": {
+    "profile": [
+      "http://example.com/fhir/StructureDefinition/patient-3a-t2-typeprofile"
+    ]
+  },
+  "text": {
+    "status": "additional",
+    "div": "<div>Patient with marital status not coded in the required SNOMED.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.com/fhir/StructureDefinition/resource-test-expected",
+      "extension": [
+        {
+          "url": "passFlag",
+          "valueBoolean": false
+        }
+      ]
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "given": [
+        "Jane"
+      ],
+      "family": [
+        "Smith"
+      ]
+    },
+    {
+      "use": "maiden",
+      "given": [
+        "Jane"
+      ],
+      "family": [
+        "Doe"
+      ]
+    }
+  ],
+  "maritalStatus": {
+    "coding": [
+      {
+        "system":"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+        "code":"M"
+      }
+    ],
+    "text":"Married"
+  }
+}
