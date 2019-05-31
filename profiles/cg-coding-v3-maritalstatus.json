@@ -1,0 +1,42 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/coding-v3-maritalstatus",
+  "version": "0.1",
+  "name": "CodingV3MaritalStatus",
+  "title": "Coding for HL7 v3 Marital Status",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description":"Coding profile for HL7 v3 Marital Status.",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Coding",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Coding",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Coding",
+        "path": "Coding"
+      },
+      {
+        "id": "Coding.system",
+        "path": "Coding.system",
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "resourceType": "Patient",
+  "meta": {
+    "profile": [
+      "http://example.com/fhir/StructureDefinition/patient-4b-typeprofile"
+    ]
+  },
+  "text": {
+    "status": "additional",
+    "div": "<div>V3 coding of marital status is required (and absent)</div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.com/fhir/StructureDefinition/resource-test-expected",
+      "extension": [
+        {
+          "url": "passFlag",
+          "valueBoolean": false
+        }
+      ]
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "given": [
+        "Jane"
+      ],
+      "family": [
+        "Smith"
+      ]
+    }
+  ],
+  "maritalStatus": {
+    "coding": [
+      {
+        "system":"http://snomed.info/sct",
+        "code":"87915002"
+      },
+      {
+        "system":"http://ncimeta.nci.nih.gov",
+        "code":"C0555047"
+      }
+    ],
+    "text":"Married"
+  }
+}

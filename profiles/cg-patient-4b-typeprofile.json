@@ -1,0 +1,51 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/patient-4b-typeprofile",
+  "version": "0.1",
+  "name": "PatientTypeProfile",
+  "title": "Patient Profile 4 - 4b Add another slice with a type profile.",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description": "Coding is sliced by system. Applied type profile fixes system.",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://example.com/fhir/StructureDefinition/patient-4a-typeprofile",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient"
+      },
+      {
+        "id": "Patient.maritalStatus.coding:V3MaritalStatus",
+        "path": "Patient.maritalStatus.coding",
+        "sliceName": "V3MaritalStatus",
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "http://example.com/fhir/StructureDefinition/coding-v3-maritalstatus"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
