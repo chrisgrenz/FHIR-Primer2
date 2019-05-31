@@ -1,0 +1,85 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/patient-1c-telecomslice",
+  "version": "0.1",
+  "name": "PatientWithTelecomSlice",
+  "title": "Patient Profile 1 - 1c Multi Value Slice",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description":"Profile of Patient with telecom sliced by two discriminators",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://example.com/fhir/StructureDefinition/patient-1b-nameslice",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient"
+      },
+      {
+        "id": "Patient.telecom",
+        "path": "Patient.telecom",
+        "slicing": {
+          "discriminator": [
+            {
+              "type":"value",
+              "path":"system"
+            },
+            {
+              "type":"value",
+              "path":"use"
+            }
+          ],
+          "ordered":false,
+          "rules":"open"
+        }
+      },
+      {
+        "id": "Patient.telecom:homePhone",
+        "path": "Patient.telecom",
+        "sliceName":"homePhone"
+      },
+      {
+        "id": "Patient.telecom:homePhone.system",
+        "path": "Patient.telecom.system",
+        "fixedCode":"phone"
+      },
+      {
+        "id": "Patient.telecom:homePhone.use",
+        "path": "Patient.telecom.use",
+        "fixedCode":"home"
+      },
+      {
+        "id": "Patient.telecom:workEmail",
+        "path": "Patient.telecom",
+        "sliceName":"workEmail"
+      },
+      {
+        "id": "Patient.telecom:workEmail.system",
+        "path": "Patient.telecom.system",
+        "fixedCode":"email"
+      },
+      {
+        "id": "Patient.telecom:workEmail.use",
+        "path": "Patient.telecom.use",
+        "fixedCode":"work"
+      }
+    ]
+  }
+}

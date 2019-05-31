@@ -1,0 +1,42 @@
+{
+  "resourceType": "Patient",
+  "meta": {
+    "profile": ["http://example.com/fhir/StructureDefinition/patient-1b-nameslice"]
+  },
+  "text": {
+    "status": "additional",
+    "div": "<div>Patient with names for both defined slices.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.com/fhir/StructureDefinition/resource-test-expected",
+      "extension": [
+        {
+          "url": "passFlag",
+          "valueBoolean": true
+        }
+      ]
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "given": [
+        "Jane"
+      ],
+      "family": [
+        "Smith"
+      ]
+    },
+    {
+      "use": "maiden",
+      "given": [
+        "Jane"
+      ],
+      "family": [
+        "Doe"
+      ]
+    }
+
+  ]
+}

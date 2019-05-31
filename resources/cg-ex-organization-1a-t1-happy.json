@@ -1,0 +1,23 @@
+{
+  "resourceType": "Organization",
+  "text": {
+    "status": "additional",
+    "div": "<div><p>An organization coded with a single type drawn from the required set</p></div>"
+  },
+  "meta": {
+    "profile": [
+      "http://example.com/fhir/StructureDefinition/organization-1a-team"
+    ]
+  },
+  "name": "Organization 1a-t1-happy",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "team"
+        }
+      ]
+    }
+  ]
+}

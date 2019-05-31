@@ -1,0 +1,71 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/patient-1b-nameslice",
+  "version": "0.1",
+  "name": "PatientWithNameSlice",
+  "title": "Patient Profile 1 - 1b Single Value Slice",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description": "Profile of Patient with extensions",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://example.com/fhir/StructureDefinition/patient-1a-extensions",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient"
+      },
+      {
+        "id": "Patient.name",
+        "path": "Patient.name",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "use"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Patient.name:officialName",
+        "path": "Patient.name",
+        "sliceName": "officialName"
+      },
+      {
+        "id": "Patient.name:officialName.use",
+        "path": "Patient.name.use",
+        "fixedCode": "official"
+      },
+      {
+        "id": "Patient.name:maidenName",
+        "path": "Patient.name",
+        "sliceName": "maidenName"
+      },
+      {
+        "id": "Patient.name:maidenName.use",
+        "path": "Patient.name.use",
+        "fixedCode": "maiden"
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "resourceType":"Patient",
+  "text": {
+    "status":"additional",
+    "div":"<div>Most basic patient.</div>"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/codeableconcept-commonsystems-rxnorm",
+  "version": "0.1",
+  "name": "CodeableConceptCommonSystemsWithRxNorm",
+  "title": "CodeableConcept with SNOMED, LOINC, and RxNorm",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description":"Add an additional slice for RxNorm using a Coding profile definition.",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "CodeableConcept",
+  "baseDefinition": "http://example.com/fhir/StructureDefinition/codeableconcept-commonsystems",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CodeableConcept",
+        "path": "CodeableConcept"
+      },
+      {
+        "id": "CodeableConcept.coding:RXNORM",
+        "path": "CodeableConcept.coding",
+        "sliceName": "RXNORM",
+        "definition": "Coding in RXNORM",
+        "type": [
+          {
+            "code":"Coding",
+            "profile": ["http://example.com/fhir/StructureDefinition/coding-rxnorm"]
+          }
+        ]
+      }
+    ]
+  }
+}

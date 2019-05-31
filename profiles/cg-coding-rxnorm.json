@@ -1,0 +1,42 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/coding-rxnorm",
+  "version": "0.1",
+  "name": "CodingRxNorm",
+  "title": "Coding for RxNorm",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description":"Coding profile for RxNorm common system.",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Coding",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Coding",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Coding",
+        "path": "Coding"
+      },
+      {
+        "id": "Coding.system",
+        "path": "Coding.system",
+        "fixedUri": "http://www.nlm.nih.gov/research/umls/rxnorm"
+      }
+    ]
+  }
+}

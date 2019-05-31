@@ -1,0 +1,38 @@
+{
+  "resourceType": "Patient",
+  "meta": {
+    "profile": [
+      "http://example.com/fhir/StructureDefinition/patient-1b-t2-nameslice"
+    ]
+  },
+  "text": {
+    "status": "additional",
+    "div": "<div><p>Expect 2 errors:</p><p>Profile requires official (which is missing) and disallows maiden (which is present).</p></div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.com/fhir/StructureDefinition/resource-test-expected",
+      "extension": [
+        {
+          "url": "passFlag",
+          "valueBoolean": false
+        },
+        {
+          "url": "errorPath",
+          "valueString": "Patient.name[0]"
+        }
+      ]
+    }
+  ],
+  "name": [
+    {
+      "use": "maiden",
+      "given": [
+        "Jane"
+      ],
+      "family": [
+        "Doe"
+      ]
+    }
+  ]
+}

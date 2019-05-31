@@ -1,0 +1,23 @@
+{
+  "resourceType": "Organization",
+  "text": {
+    "status": "additional",
+    "div": "<div><p>An organization coded with a code not from the required system</p></div>"
+  },
+  "meta": {
+    "profile": [
+      "http://example.com/fhir/StructureDefinition/organization-1a-team"
+    ]
+  },
+  "name": "Organization 1a-t3-error",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://example.com/CodeSystem/organization-type",
+          "code": "team"
+        }
+      ]
+    }
+  ]
+}

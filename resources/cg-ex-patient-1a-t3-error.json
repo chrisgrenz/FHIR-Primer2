@@ -1,0 +1,34 @@
+{
+  "resourceType": "Patient",
+  "text": {
+    "status": "additional",
+    "div": "<div>Extension with a bad type.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.com/fhir/StructureDefinition/resource-test-expected",
+      "extension": [
+        {
+          "url": "passFlag",
+          "valueBoolean": false
+        },
+        {
+          "url": "errorPath",
+          "valueString":"Patient.extension[1].valueBoolean.extension[0].valueCode"
+        }
+      ]
+    },
+    {
+      "url": "http://example.com/fhir/StructureDefinition/patient-legalcase",
+      "valueBoolean": true,
+      "_valueBoolean": {
+        "extension": [
+          {
+            "url": "http://example.com/fhir/StructureDefinition/patient-legalcase-leadcounsel",
+            "valueCode": "John Q, Esq."
+          }
+        ]
+      }
+    }
+  ]
+}

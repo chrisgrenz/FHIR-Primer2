@@ -1,0 +1,49 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/patient-1b-t2-nameslice",
+  "version": "0.1",
+  "name": "PatientWithNameSliceT2",
+  "title": "Patient Profile 1 - 1b T2 with constraints",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description": "Constraint on sliced names - require official, disallow maiden.",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://example.com/fhir/StructureDefinition/patient-1b-nameslice",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient"
+      },
+      {
+        "id": "Patient.name:officialName",
+        "path": "Patient.name",
+        "sliceName": "officialName",
+        "min":1
+      },
+      {
+        "id": "Patient.name:maidenName",
+        "path": "Patient.name",
+        "sliceName": "maidenName",
+        "max":"0"
+      }
+    ]
+  }
+}

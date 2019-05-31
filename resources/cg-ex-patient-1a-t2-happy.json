@@ -1,0 +1,30 @@
+{
+  "resourceType": "Patient",
+  "text": {
+    "status": "additional",
+    "div": "<div>Patient with an extension and a nested extension.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.com/fhir/StructureDefinition/resource-test-expected",
+      "extension": [
+        {
+          "url": "passFlag",
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "url": "http://example.com/fhir/StructureDefinition/patient-legalcase",
+      "valueBoolean": true,
+      "_valueBoolean": {
+        "extension": [
+          {
+            "url": "http://example.com/fhir/StructureDefinition/patient-legalcase-leadcounsel",
+            "valueString": "John Q, Esq."
+          }
+        ]
+      }
+    }
+  ]
+}

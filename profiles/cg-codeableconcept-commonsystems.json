@@ -1,0 +1,73 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/codeableconcept-commonsystems",
+  "version": "0.1",
+  "name": "CodeableConceptCommonSystems",
+  "title": "CodeableConcept with common systems",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description":"Slicing CodeableConcept.coding for SNOMED and LOINC by system uri.",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "CodeableConcept",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/CodeableConcept",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CodeableConcept",
+        "path": "CodeableConcept"
+      },
+      {
+        "id": "CodeableConcept.coding",
+        "path": "CodeableConcept.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "CodeableConcept.coding:SNOMED",
+        "path": "CodeableConcept.coding",
+        "sliceName": "SNOMED",
+        "definition": "Coding in SNOMED-CT"
+      },
+      {
+        "id": "CodeableConcept.coding:SNOMED.system",
+        "path": "CodeableConcept.coding.system",
+        "fixedUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "CodeableConcept.coding:LOINC",
+        "path": "CodeableConcept.coding",
+        "sliceName": "LOINC",
+        "definition": "Coding in LOINC"
+      },
+      {
+        "id": "CodeableConcept.coding:LOINC.system",
+        "path": "CodeableConcept.coding.system",
+        "fixedUri": "http://loinc.org"
+      }
+    ]
+  }
+}

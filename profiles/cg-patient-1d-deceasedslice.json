@@ -1,0 +1,42 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/patient-1d-deceasedslice",
+  "version": "0.1",
+  "name": "PatientWithDeceasedSlice",
+  "title": "Patient Profile 1 - 1d Type Choice Slice",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description":"Profile of Patient with deceased[x] sliced by type.",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://example.com/fhir/StructureDefinition/patient-1c-telecomslice",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient"
+      },
+      {
+        "id": "Patient.deceased[x]:deceasedBoolean",
+        "path": "Patient.deceasedBoolean",
+        "comment":"A slice that applied only to the boolean type."
+      }
+    ]
+  }
+}

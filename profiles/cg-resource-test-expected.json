@@ -1,0 +1,110 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/resource-test-expected",
+  "version": "0.1",
+  "name": "TestExpectation",
+  "title": "Annotate a resource with the expected results of validation",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description": "Describe the expected results of validating a resource",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Resource"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://example.com/fhir/StructureDefinition/resource-test-expected"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": 0
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules":"open"
+        }
+      },
+      {
+        "id": "Extension.extension:passFlag",
+        "path": "Extension.extension",
+        "sliceName": "passFlag",
+        "min":"1",
+        "max":"1"
+      },
+      {
+        "id": "Extension.extension:passFlag.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "passFlag",
+        "min":"1"
+      },
+      {
+        "id": "Extension.extension:passFlag.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "min":"1"
+      },
+      {
+        "id": "Extension.extension:errorPath",
+        "path": "Extension.extension",
+        "sliceName": "errorPath"
+      },
+      {
+        "id": "Extension.extension:errorPath.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "errorPath",
+        "min":"1"
+      },
+      {
+        "id": "Extension.extension:errorPath.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "min":"1"
+      }
+    ]
+  }
+}

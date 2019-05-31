@@ -1,0 +1,61 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/patient-2b-teamgp",
+  "version": "0.1",
+  "name": "PatientGPSlice",
+  "title": "Patient Profile 2 - 2b Reslice by profile",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description":"Profile of Patient generalPractitioner resliced for team organizations.",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://example.com/fhir/StructureDefinition/patient-2a-generalPractitioner",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient"
+      },
+      {
+        "id": "Patient.generalPractitioner:organizationalCarer",
+        "path": "Patient.generalPractitioner",
+        "slicing": {
+          "discriminator": [
+            {
+              "type":"profile",
+              "path":"$this.resolve()"
+            }
+          ],
+          "rules":"open"
+        }
+      },
+      {
+        "id": "Patient.generalPractitioner:organizationalCarer/teamCare",
+        "path": "Patient.generalPractitioner",
+        "sliceName":"teamCare",
+        "type": [
+          {
+            "code":"Reference",
+            "targetProfile":["http://example.com/fhir/StructureDefinition/organization-1a-team"]
+          }
+        ]
+      }
+    ]
+  }
+}
