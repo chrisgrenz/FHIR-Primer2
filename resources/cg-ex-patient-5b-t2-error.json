@@ -1,0 +1,40 @@
+{
+  "resourceType": "Patient",
+  "meta": {
+    "profile": [
+      "http://example.com/fhir/StructureDefinition/patient-5b-t2-defaultslice"
+    ]
+  },
+  "text": {
+    "status": "additional",
+    "div": "<div>Patient with multiple identifiers.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.com/fhir/StructureDefinition/resource-test-expected",
+      "extension": [
+        {
+          "url": "passFlag",
+          "valueBoolean": false
+        }
+      ]
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "given": [
+        "Jane"
+      ],
+      "family": [
+        "Smith"
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "system":"http://hl7.org/fhir/sid/us-ssn",
+      "value":"123-45-6789"
+    }
+  ]
+}

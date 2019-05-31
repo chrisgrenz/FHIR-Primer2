@@ -1,0 +1,62 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/patient-5a-slicing",
+  "version": "0.1",
+  "name": "PatientIdentifierSlicing",
+  "title": "Patient Profile 5 - 5a Slice identifier by system (open)",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description": "Patient identifiers sliced by system (open slicing)",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://hl7.com/fhir/StructureDefinition/Patient",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient"
+      },
+      {
+        "id": "Patient.identifier",
+        "path": "Patient.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Patient.identifier:SSN",
+        "path": "Patient.identifier",
+        "sliceName": "SSN",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:SSN.system",
+        "path": "Patient.identifier.system",
+        "fixedUri": "http://hl7.org/fhir/sid/us-ssn"
+      }
+    ]
+  }
+}

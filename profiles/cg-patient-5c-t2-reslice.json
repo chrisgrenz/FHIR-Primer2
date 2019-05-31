@@ -1,0 +1,43 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://example.com/fhir/StructureDefinition/patient-5c-t2-reslice",
+  "version": "0.1",
+  "name": "PatientIdentifierReSliceConstrained",
+  "title": "Patient Profile 5 - 5c Make MRN reslice required",
+  "status": "active",
+  "experimental": false,
+  "date": "2019",
+  "publisher": "Chris Grenz",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "chris.grenz@thoughtworks.com"
+        }
+      ]
+    }
+  ],
+  "description": "Require an MRN (selected by type).",
+  "copyright": "(c)2019 Chris Grenz into public domain",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://example.com/fhir/StructureDefinition/patient-5c-reslice",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient"
+      },
+      {
+        "id": "Patient.identifier:@default/MRN",
+        "path": "Patient.identifier",
+        "sliceName": "@default/MRN",
+        "min": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "resourceType": "Patient",
+  "meta": {
+    "profile": [
+      "http://example.com/fhir/StructureDefinition/patient-5c-t2-reslice"
+    ]
+  },
+  "text": {
+    "status": "additional",
+    "div": "<div>Patient has an MRN by system, and default slice is activated. But required type on reslice is not present.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.com/fhir/StructureDefinition/resource-test-expected",
+      "extension": [
+        {
+          "url": "passFlag",
+          "valueBoolean": false
+        }
+      ]
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "given": [
+        "Jane"
+      ],
+      "family": [
+        "Smith"
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "system": "http://example.com/sid/medical-id",
+      "value": "PAT123"
+    },
+    {
+      "system": "http://hl7.org/fhir/sid/us-ssn",
+      "value": "123-45-6789"
+    }
+  ]
+}
