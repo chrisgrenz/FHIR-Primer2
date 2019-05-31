@@ -42,7 +42,7 @@
         "id": "Patient.telecom:workEmail",
         "path": "Patient.telecom",
         "sliceName":"workEmail",
-        "min":"2"
+        "min":2
       }
     ]
   }
