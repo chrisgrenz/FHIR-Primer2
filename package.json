@@ -1,0 +1,19 @@
+{
+  "name": "fhir-primer2",
+  "version": "1.0.0",
+  "description": "Test profiles and resources for snapshot and validator.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisgrenz/FHIR-Primer2.git"
+  },
+  "author": "Chris Grenz",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/chrisgrenz/FHIR-Primer2/issues"
+  },
+  "homepage": "https://github.com/chrisgrenz/FHIR-Primer2#readme"
+}
